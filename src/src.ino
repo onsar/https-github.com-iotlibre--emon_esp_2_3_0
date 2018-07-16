@@ -32,6 +32,21 @@
 #include "emoncms.h"
 #include "mqtt.h"
 
+
+/**********************************
+int registro_mensajes_time[2048];
+byte registro_mensajes_variable[2048];
+short registro_mensajes_value[2048];
+data used: 68.4%
+time saved: 34 horas
+***********************************/
+
+/**********************************
+registro_mensajes[1024][3];  //filas, columnas
+data used: 65.9%
+time saved: 17 horas
+***********************************/
+
 // -------------------------------------------------------------------
 // SETUP
 // -------------------------------------------------------------------
@@ -70,6 +85,14 @@ void setup() {
 // -------------------------------------------------------------------
 void loop()
 {
+
+  // registro_mensajes[0][0]= 1111;  //filas, columnas
+  // registro_mensajes[1023][1]= 1111;  //filas, columnas
+  // registro_mensajes[1023][2]= 1111;  //filas, columnas
+  // Serial.println(registro_mensajes_tiempo[1014]);
+  // registro_mensajes_time[1023]=1;
+  // registro_mensajes_variable[1023]=1;
+  // registro_mensajes_value[1023]=1;
   ota_loop();
   web_server_loop();
   wifi_loop();
@@ -91,4 +114,3 @@ void loop()
     }
   }
 } // end loop
-
